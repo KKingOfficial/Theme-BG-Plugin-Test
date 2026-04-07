@@ -1,9 +1,0 @@
-{
-    "$meta": {
-        "name": "KKing Plugins",
-        "description": "KKing's Revenge plugins"
-    },
-    "theme-chat-background": {
-        "version": "1.0.0"
-    }
-}
