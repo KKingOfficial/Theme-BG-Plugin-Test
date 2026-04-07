@@ -3,12 +3,17 @@
 
     return {
         onLoad: function() {
-            var m = findByProps("renderLatestMessages");
-            var keys = Object.keys(m).filter(function(k) {
-                return typeof m[k] === "function" || (m[k] && typeof m[k] === "object" && typeof m[k].render === "function");
+            var props = ["loadCachedMessages", "renderLatestMessages", "displayLatestMessages", "firstRenderAfterReadyPayload"];
+            var out = [];
+            props.forEach(function(p) {
+                var m = findByProps(p);
+                if (m) {
+                    var keys = Object.keys(m).slice(0, 8);
+                    out.push(p.slice(0,10) + ":\n  " + keys.join(", "));
+                }
             });
-            alert("renderLatestMessages keys:\n" + keys.join("\n"));
+            alert(out.join("\n\n"));
         },
         onUnload: function() {}
-    }; 
+    };
 })();
