@@ -3,5 +3,5 @@
     "description": "Renders the background image from your active theme behind the chat window",
     "authors": [{ "name": "KKing", "id": "Noneya" }],
     "main": "index.js",
-    "hash": "13"
+    "hash": "11"
 }
