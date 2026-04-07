@@ -3,20 +3,11 @@
 
     return {
         onLoad: function() {
-            var candidates = [
-                "stickyVisiblity",
-                "jumpToChatText",
-                "loadCachedMessages",
-                "renderLatestMessages",
-                "displayLatestMessages",
-                "firstRenderAfterReadyPayload"
-            ];
-
-            var results = candidates.map(function(p) {
-                return p + "=" + (findByProps(p) ? "y" : "n");
-            }).join("\n");
-
-            alert(results);
+            var m = findByProps("renderLatestMessages");
+            var keys = Object.keys(m).filter(function(k) {
+                return typeof m[k] === "function" || (m[k] && typeof m[k] === "object" && typeof m[k].render === "function");
+            });
+            alert("renderLatestMessages keys:\n" + keys.join("\n"));
         },
         onUnload: function() {}
     };
