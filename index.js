@@ -1,4 +1,4 @@
-(function() {
+(function() { 
     var findByProps = vendetta.metro.findByProps;
 
     return {
