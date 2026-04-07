@@ -1,10 +1,13 @@
 (function() {
-    var showToast = vendetta.ui.toasts.showToast;
-
     return {
         onLoad: function() {
-            showToast("vendetta keys: " + Object.keys(vendetta).join(", "));
-            showToast("metro keys: " + Object.keys(vendetta.metro).join(", "));
+            try {
+                var vKeys = typeof vendetta !== "undefined" ? Object.keys(vendetta).join(",") : "vendetta undefined";
+                var bKeys = typeof bunny !== "undefined" ? Object.keys(bunny).join(",") : "bunny undefined";
+                alert("v=" + vKeys + "\nb=" + bKeys);
+            } catch(e) {
+                alert("error: " + e.message);
+            }
         },
         onUnload: function() {}
     };
