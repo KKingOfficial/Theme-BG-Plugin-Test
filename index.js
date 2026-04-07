@@ -3,6 +3,7 @@
     var findByName = vendetta.metro.findByName;
     var React = vendetta.metro.common.React;
     var RN = vendetta.metro.common.ReactNative;
+    var showToast = vendetta.ui.toasts.showToast;
 
     function getBg() {
         try {
@@ -23,6 +24,14 @@
         onLoad: function() {
             var m = findByName("MessagesConnected", false);
             var target = m && m.render ? m.render : m;
+            var bg = getBg();
+
+            showToast(
+                "BG Plugin: m=" + (m ? "found" : "null") +
+                " target=" + (target ? "found" : "null") +
+                " bg=" + (bg ? bg.url.slice(0, 20) : "null")
+            );
+
             if (!target) return;
 
             unpatch = after("render", target, function(args, ret) {
