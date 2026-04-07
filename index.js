@@ -10,5 +10,5 @@
             alert("renderLatestMessages keys:\n" + keys.join("\n"));
         },
         onUnload: function() {}
-    };
+    }; 
 })();
