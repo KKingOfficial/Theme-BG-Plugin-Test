@@ -1,7 +1,0 @@
-{
-    "name": "Theme Chat Background",
-    "description": "Renders a background image behind the chat window",
-    "authors": [{ "name": "KKing", "id": "Noneya" }],
-    "main": "index.js",
-    "hash": "1"
-}
